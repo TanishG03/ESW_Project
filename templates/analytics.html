@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../static/css/nav.css" />
+    <link rel="stylesheet" href="../static/css/slideshow.css" />
+    <link rel="stylesheet" href="../static/css/hospital.css" />
+    <link rel="stylesheet" href="../static/css/analytics.css" />
+
+    <title>DRONOS</title>
+  </head>
+  <body style="background-color: black">
+    <nav style="font-family: Arial, Helvetica, sans-serif">
+      <a
+        id="clicktohome"
+        href="homepage"
+        style="
+          width: 20%;
+          float: left;
+          position: relative;
+          text-align: center;
+          padding-top: 1.4%;
+          font-family: Hanson-Bold;
+          font-size: 75px;
+        "
+        >DRONOS</a
+      >
+      <ul
+        style="
+          width: 35%;
+          float: right;
+          margin-right: 50px;
+          text-align: center;
+          margin-top: 20px;
+          font-family: Arial, Helvetica, sans-serif;
+        "
+      >
+        <li><a href="analytics">Analytics</a></li>
+        <li><a href="hardware">Hardware</a></li>
+
+        <li><a href="categories">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div
+      class="slideshow-container"
+      style="font-family: Arial, Helvetica, sans-serif"
+    >
+      <div class="mySlides fade">
+        <div
+          id="initial_container"
+          style="
+            font-size: 150px;
+            color: rgb(25, 19, 97);
+            text-align: center;
+            margin-left: 0%;
+            padding-top: 11.5%;
+            background-image: url(../static/assets/THUNK_Data_1200x600.gif);
+          "
+        >
+          DATA <br />
+          ANALYTICS
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="analytics-container"
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url(../static/assets/aesthetic-colorful-cute-blue-gradient-wallpaper-illustration-perfect-for-wallpaper-backdrop-postcard-background-banner-vector.jpg);
+        background-size: cover;
+      "
+    ></div>
+
+    <div
+      class="slideshow-container"
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url(../static/assets/dji-mavic-air-2-review-Pat-Kay-Blog-09015_1920x.webp);
+      "
+    >
+      <div id="initial_container_2" style="text-align: center">
+        MODULE FOR DRONE
+      </div>
+    </div>
+
+    <div class="flex-container" style="margin-top: 20px; height: 700px">
+      <div class="flex-item">
+        <a
+          style="text-decoration: none; color: white"
+          href="analytics"
+          target="_self"
+        >
+          <p class="text-container1" style="font-size: 70px">ANALYTICS</p>
+        </a>
+      </div>
+      <div class="flex-item">
+        <a
+          style="text-decoration: none; color: white"
+          href="hardware"
+          target="_self"
+        >
+          <p class="text-container1" style="font-size: 70px">HARDWARE</p>
+        </a>
+      </div>
+      <div class="flex-item">
+        <a
+          style="text-decoration: none; color: white"
+          href="about"
+          target="_self"
+        >
+          <p class="text-container1" style="font-size: 70px">ABOUT US</p>
+        </a>
+      </div>
+    </div>
+
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+
+      // Change slides automatically every 3 seconds
+      setInterval(function () {
+        plusSlides(1);
+      }, 4000);
+
+      const typingText = "We Have Got You Covered!!";
+      const typingDelay = 40; // in milliseconds
+      let index = 0;
+      const typingEl = document.getElementById("typing");
+
+      function type() {
+        typingEl.textContent += typingText[index];
+
+        if (++index < typingText.length) {
+          setTimeout(type, typingDelay);
+        }
+      }
+
+      setTimeout(type, typingDelay);
+
+      function type2() {
+        const typingText2 = "Let us shoulder it for You..";
+        const typingDelay2 = 40; // in milliseconds
+        let index2 = 0;
+        const typingEl2 = document.getElementById("typing2");
+
+        function type2Inner() {
+          typingEl2.textContent += typingText2[index2];
+
+          if (++index2 < typingText2.length) {
+            setTimeout(type2Inner, typingDelay2);
+          }
+        }
+
+        setTimeout(type2Inner, typingDelay);
+      }
+
+      setTimeout(type2, typingDelay * typingText.length);
+    </script>
+  </body>
+</html>
