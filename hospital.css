@@ -22,7 +22,7 @@
     word-break: break-word;
     text-align: center;
     height: 800px;
-
+    font-family: Hanson-Bold;
     font-size: 30px;
     transition: flex-grow 0.5s;
   }
@@ -40,7 +40,7 @@
   }
 
   .flex-item:nth-child(1) {
-    background-image: url("https://www.himagirihospitals.com/wp-content/uploads/2020/01/Building-Image.jpg");
+    background-image: url(rumen-data-analytics-abstract.png);
     background-size: cover;
     background-position: center;
 
@@ -49,7 +49,7 @@
 
 
   .flex-item:nth-child(2) {
-    background-image: url("https://pbs.twimg.com/media/DurRjMQUcAAQ43_?format=jpg&name=4096x4096");
+    background-image: url(windows-10x-abstract-uhdpaper.com-hd-6.2194.jpg);
     background-size: cover;
     background-position: center;
 
@@ -57,7 +57,7 @@
 
   .flex-item:nth-child(3) {
     background-size: cover;
-    background-image: url("https://content.jdmagicbox.com/comp/chennai/h5/044pxx44.xx44.151003155039.b4h5/catalogue/apollo-spectra-hospitals-mrc-nagar-raja-annamalai-puram-chennai-hospitals-q81r2q.jpg");
+    background-image: url(contact-us-concept-landing-page_52683-12860.avif);
     background-position: center;
   }
 

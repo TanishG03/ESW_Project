@@ -72,6 +72,18 @@ nav {
     line-height: 110%;
     padding-top: 10%;
   }
+
+  #initial_container_2{
+    position: relative;
+    height: 100%;
+    font-size: 120px;
+    font-family: Hanson-Bold;
+    margin-right: 2%;
+    line-height: 110%;
+    align-items: end;
+    text-align: end;
+    padding-top: 2%;
+  }
   
   #typing{
     color: white;
