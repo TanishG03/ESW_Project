@@ -30,6 +30,15 @@ body {
     background-image: url(aesthetic-colorful-yellow-and-green-gradient-background-illustration-perfect-for-wallpaper-background-backdrop-banner-vector.jpg);
 }
 
+.analytics-container {
+    height: 80vh; /* Set height to 60% of the viewport height */
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 7%;
+    background-image: url(aesthetic-colorful-yellow-and-green-gradient-background-illustration-perfect-for-wallpaper-background-backdrop-banner-vector.jpg);
+}
+
 .mySlides {
     display: none;
     position: absolute;

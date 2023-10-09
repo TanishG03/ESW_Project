@@ -99,3 +99,11 @@ nav {
     text-align: left;
     margin-left: 20px;
   }
+
+  .analytics_container{
+    height: 70vh; /* Set height to 60% of the viewport height */
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 7%;
+  }
