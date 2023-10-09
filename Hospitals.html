@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="slideshow.css" />
+    <link rel="stylesheet" href="nav.css" />
+    <link rel="stylesheet" href="cover.css" />
+    <link rel="stylesheet" href="listbox.css" />
+    <title>MediFLow | Hospitals</title>
+  </head>
+  <body style="font-family: Arial, Helvetica, sans-serif; background-color: black;">
+    <nav>
+      <a id="clicktohome" href="homepage.html"
+        ><img
+          src=" logo.png"
+          alt="Site logo"
+          style="height: 100px; margin-left: 50px"
+      /></a>
+      <ul
+        style="
+          width: 40%;
+          float: right;
+          margin-right: 50px;
+          text-align: center;
+          margin-top: 20px;
+          font-family: Courier Prime, Arial;
+        "
+      >
+      <li><a href="iotmap.html">Track</a></li>
+      <li><a href="Hospitals.html">Hospitals</a></li>
+      <li><a href="categories.html">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="slideshow-container" >
+
+      <div class="mySlides fade"><a href="https://www.himagirihospitals.com/">
+        <img src="https://www.himagirihospitals.com/wp-content/uploads/2020/01/Building-Image.jpg" style="width:100%">
+        <div class="text">HIMAGIRI</div></a>
+      </div>
+      
+      <div class="mySlides fade"><a href="https://continentalhospitals.com/contact/">
+        <img src="https://pbs.twimg.com/media/DurRjMQUcAAQ43_?format=jpg&name=4096x4096" style="width:100%">
+        <div class="text">CONTINENTAL</div></a>
+      </div>
+      
+      <div class="mySlides fade"><a href="https://www.apollospectra.com/hyderabad/kondapur/our-hospitals/best-hospital-in-kondapur-hyderabad">
+        <img src="https://content.jdmagicbox.com/comp/chennai/h5/044pxx44.xx44.151003155039.b4h5/catalogue/apollo-spectra-hospitals-mrc-nagar-raja-annamalai-puram-chennai-hospitals-q81r2q.jpg" style="width:100%">
+        <div class="text">APOLLO</div></a>
+      </div>
+      
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+      
+      </div>
+      <br>
+      
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+      </div>
+
+      
+      </div>
+    <p>&nbsp</p>
+
+    <h1 class="text_for_cat_and_canteens">HOSPITALS</h1>
+
+    <div class="ncbox">
+      <div class="item"><span style="font-weight: bold;">Himagiri Hospitals </span><br><br><br> Address: 
+        <br>
+        Plot no 4, 5,23 & 24, Old Mumbai Hwy, Indira Nagar, Gachibowli, Hyderabad, Telangana 500032
+
+        <br><br><br><br>
+        Contact No:
+        <br>
+        040 6810 1111
+      </div>
+    
+      <div class="price" style="background-image: url('https://www.himagirihospitals.com/wp-content/uploads/2020/01/Building-Image.jpg')"></div>
+    </div>
+
+    <p>&nbsp</p>
+
+    <div class="ncbox">
+      <div class="item"><span style="font-weight: bold;">Continental Hospitals </span><br><br><br> Address: 
+        <br>
+        Plot No 3, Road No. 2, Financial District,<br> Gachibowli, Nanakaramguda, Telangana 500032
+        <br><br><br><br>
+        Contact No:
+        <br>
+        040 6700 0000
+      </div>
+    
+      <div class="price" style="background-image: url('https://pbs.twimg.com/media/DurRjMQUcAAQ43_?format=jpg&name=4096x4096')"></div>
+    </div>
+    
+
+    <p>&nbsp</p>
+
+    <div class="ncbox">
+      <div class="item"><span style="font-weight: bold;">Apollo Spectra Hospitals </span><br><br><br> Address: 
+        <br>
+        Plot # 1 & 6, Kothaguda X Road, near Harsha Toyota Showroom, Kondapur, Telangana 500032
+        <br><br><br><br>
+        Contact No:
+        <br>
+        084484 40991
+      </div>
+    
+      <div class="price" style="background-image: url('https://content.jdmagicbox.com/comp/chennai/h5/044pxx44.xx44.151003155039.b4h5/catalogue/apollo-spectra-hospitals-mrc-nagar-raja-annamalai-puram-chennai-hospitals-q81r2q.jpg')"></div>
+    </div>
+
+  <p>&nbsp</p>
+
+
+		
+        </div>
+    </div>
+
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      
+      }
+      
+      // Change slides automatically every 3 seconds
+      setInterval(function() {
+        plusSlides(1);
+      }, 4000);
+    </script>
+  </body>
+</html>

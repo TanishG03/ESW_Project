@@ -1,0 +1,86 @@
+
+.flex-container {
+    display: flex;
+    flex-wrap: stretch;
+
+    height: 800px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: bold;
+    /* height: 800px; */
+    background-color: #f1f1f1;
+  }
+
+  .flex-item {
+    color: #f1f1f1;
+    font-size: 400px;
+    width: 200px;
+    flex-grow: 1;
+    /* padding: 20px; */
+    /* margin: 10px; */
+    /* border-radius: 20px; */
+    word-break: break-word;
+    text-align: center;
+    height: 800px;
+
+    font-size: 30px;
+    transition: flex-grow 0.5s;
+  }
+
+  .flex-item:hover {
+    flex-grow: 2.5;
+    filter: brightness(80%);
+    transition: 0.5s;
+
+  }
+
+  .flex-item:hover:after {
+    filter: brightness(100%);
+
+  }
+
+  .flex-item:nth-child(1) {
+    background-image: url("https://www.himagirihospitals.com/wp-content/uploads/2020/01/Building-Image.jpg");
+    background-size: cover;
+    background-position: center;
+
+  }
+
+
+
+  .flex-item:nth-child(2) {
+    background-image: url("https://pbs.twimg.com/media/DurRjMQUcAAQ43_?format=jpg&name=4096x4096");
+    background-size: cover;
+    background-position: center;
+
+  }
+
+  .flex-item:nth-child(3) {
+    background-size: cover;
+    background-image: url("https://content.jdmagicbox.com/comp/chennai/h5/044pxx44.xx44.151003155039.b4h5/catalogue/apollo-spectra-hospitals-mrc-nagar-raja-annamalai-puram-chennai-hospitals-q81r2q.jpg");
+    background-position: center;
+  }
+
+
+
+  .flex-item:hover .text-container1 {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  .text-container1 {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    padding: 0;
+    margin: 0;
+    transform: translate(-50%, 20%);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .text-container1 p {
+
+    color: white;
+  }
+

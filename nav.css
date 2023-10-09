@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'Hanson-Bold';
+  src: url(hanson-bold.ttf);
+}
+
+nav {
+    height: 10.5%;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    background-color: #000000;
+    padding: 0px;
+    z-index: 999999;
+    /* border-bottom: #11d100;
+    border-width: 10px; */
+    border-bottom: 2.5px solid #11d100; /* added solid style and specified border color */
+  }
+  
+  hr{
+    background-color: black;
+    height:5px;
+    padding: 0px;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding-top: 1%;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  nav li {
+    margin: 0 10px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 180%;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  nav a:hover {
+      color: white;
+      opacity: 0.6;
+  }
+  
+  .text_for_cat_and_canteens{
+    height: 12%;
+    color: white;
+    align-items: center;
+    align-content: center;
+    font-size: 100px;
+    text-align: center;
+    margin-top: 2%;
+    font-weight: bold;
+    margin-bottom: 2%;
+    background-position: center;
+  
+  }
+  
+  #initial_container{
+    position: relative;
+    height: 100%;
+    font-size: 130px;
+    font-family: Hanson-Bold;
+    margin-left: 1%;
+    line-height: 110%;
+    padding-top: 10%;
+  }
+  
+  #typing{
+    color: white;
+    font-size:80px ;
+    text-align: left;
+    position: relative;
+    margin-left: 3%;
+    z-index: 999999;
+  }
+  
+  #typing2{
+    font-size:130px ;
+    text-align: left;
+    margin-left: 20px;
+  }

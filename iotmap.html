@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="nav.css" />
+    <link rel="stylesheet" href="slideshow.css" />
+    <link rel="stylesheet" href="hospital.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/6cfb2cc004.js" crossorigin="anonymous"></script>
+    <title>Node Map</title>
+    <style>
+        .node-graph {
+            position: relative;
+            width: 90%;
+            height: 90%;
+            background-color: #f5eddf;
+        }
+        p{
+            padding:5%;
+        }
+        .node {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            font-size: 25px;
+            text-align:center;
+        }
+
+        .small-node {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #15587d;
+        }
+        .square{
+            width:7px;
+            height:7px;
+        }
+
+        @keyframes cloudan{
+     0%{
+        transform:translateX(-100%)
+     }
+     50%{
+        transform: translateX(100%);
+     }
+    }
+     .cloud{
+    margin-top:5%;
+    opacity: 100%;
+    height:50%;
+    width:50%;
+    overflow: hidden;
+    animation: cloudan 10s infinite linear;
+    
+    }
+
+    .hideMeAfter5Seconds {
+    animation: hideAnimation 0s ease-in 5s;
+    animation-fill-mode: forwards;
+    }
+
+    @keyframes hideAnimation {
+  to {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+    }
+
+    .showMeAfter5Seconds {
+        visibility: hidden;
+    animation: showAnimation 0s ease-in 5s;
+    animation-fill-mode: forwards;
+    }
+
+    @keyframes showAnimation {
+  to {
+    visibility: visible;
+    }
+    }
+
+    </style>
+</head>
+
+<nav style="font-family: Arial, Helvetica, sans-serif">
+    <a id="clicktohome" href="homepage.html"
+      ><img
+        src="logo.png"
+        alt="Site logo"
+        style="height: 100px; margin-left: 50px"
+    /></a>
+    <ul
+      style="
+        width: 40%;
+        float: right;
+        margin-right: 50px;
+        text-align: center;
+        margin-top: 20px;
+        font-family: Courier Prime, Arial;
+      "
+    >
+      <li><a href="iotmap.html">Track</a></li>
+      <li><a href="deliver.html">Hospitals</a></li>
+      <li><a href="categories.html">Contact Us</a></li>
+
+    </ul>
+  </nav>
+<body style="margin-top: 8%;">
+
+    
+<div class="hideMeAfter5Seconds">
+  <div class="cloud" id="cloud"><img src="ambulance.png"></div>
+</div>
+
+
+ <div class="showMeAfter5Seconds">
+    <div class="node-graph" id="node-graph">
+        <canvas id="canvas"></canvas>
+        <div class="node" id="node1" style="left: 1.5%; top: 2.3%;"><p>1</p></div>
+        <div class="node" id="node2" style="left: 10%; top: 20%;"><p>2</p></div>
+        <div class="node" id="node3" style="left: 30%; top: 40%;"><p>3</p></div>
+        <div class="node" id="node4" style="left: 50%; top: 40%;"><p>4</p></div>
+        <div class="node" id="node5" style="left: 70%; top: 70%;"><p>5</p></div>
+        <div class="node" id="node6" style="left: 90%; top: 70%;"><p>6</p></div>
+
+
+       <div class="square" style="background-color: #ff0000; left:5%; top: 70%; position: absolute;"><br>Congested</div>
+       <div class="square" style="background-color: rgb(0, 179, 250); left:5%; top: 80%; position: absolute;"><br>Medium</div>
+       <div class="square" style="background-color: rgb(14, 255, 14); left:5%; top: 90%; position: absolute;"><br>Clear</div>
+        
+       
+       <div class="small-node" id="smallnode1" style="left: 20%; top: 2.5%;"></div>
+        <div class="small-node" id="smallnode2" style="left: 33%; top: 20%;"></div>
+        <div class="small-node" id="smallnode3" style="left: 45%; top: 17%;"></div>
+        <div class="small-node" id="smallnode4" style="left: 45%; top: 2%;"></div>
+        <div class="small-node" id="smallnode5" style="left: 42%; top: 72%;"></div>
+        <div class="small-node" id="smallnode6" style="left: 78%; top: 45%;"></div>
+        <div class="small-node" id="smallnode7" style="left: 78%; top: 25%;"></div>
+        <div class="small-node" id="smallnode8" style="left: 85%; top: 20%;"></div>
+        <div class="small-node" id="smallnode9" style="left: 80%; top: 10%;"></div>
+        <div class="small-node" id="smallnode10" style="left: 89%; top: 5%;"></div>
+        <div class="small-node" id="smallnode11" style="left: 31%; top: 75%;"></div>
+
+        <i class="fa-solid fa-landmark fa-xl" style="color: #000000; left: 25%; top:55%; position: absolute;"></i>
+        <i class="fa-solid fa-shop fa-xl" style="color: #000000; left: 75%; top:35%; position: absolute;"></i>
+        <i class="fa-solid fa-school fa-xl" style="color: #000000; left: 50%; top:65%; position: absolute;"></i>
+        <i class="fa-solid fa-hotel fa-xl" style="color: #000000; left: 40%; top:15%; position: absolute;"></i>
+        <i class="fa-solid fa-shop" style="color: #000000; left: 37%; top:10%; position: absolute;"></i>
+        <i class="fa-solid fa-hospital fa-2xl" style="color: #000000; left: 20.5%; top:7%; position: absolute;"></i>
+        <p style="top:0%; left:15%; color:black; position:absolute;">Hospital</p>
+        
+       
+
+    </div>
+    <iframe width="450" height="260" style="border: 1px solid #cccccc; margin-top: 2%;" src="https://thingspeak.com/channels/12397/charts/1?&results=720&dynamic=true"></iframe>
+</div>
+    <script>
+   
+        var canvas = document.getElementById('canvas');
+        canvas.width = window.innerWidth * 0.8;
+        canvas.height = window.innerHeight * 0.8;
+
+        var ctx = canvas.getContext('2d');
+
+        // Define the nodes and their positions
+        var nodes = [
+            { id: 'node1' },
+            { id: 'node2' }
+        ];
+
+        // Define the connections between nodes
+        var connections = [
+            { id:'conn1', source: 'node1', target: 'node2' },
+            { source: 'node3', target: 'node2' },
+            { source: 'node3', target: 'node4' },
+            { source: 'node5', target: 'node4' },
+            { source: 'node5', target: 'node6' },
+            { source: 'smallnode1', target: 'node2' },
+            { source: 'smallnode2', target: 'node3' },
+            { source: 'smallnode5', target: 'node4' },
+            { source: 'smallnode2', target: 'smallnode3' },
+            { source: 'smallnode4', target: 'smallnode3' },
+            { source: 'smallnode6', target: 'smallnode7' },
+            { source: 'smallnode7', target: 'smallnode8' },
+            { source: 'smallnode9', target: 'smallnode8' },
+            { source: 'smallnode10', target: 'smallnode8' },
+            { source: 'smallnode6', target: 'node5' },
+            { source: 'smallnode11', target: 'node3' },
+            { source: 'node1', target: 'node2' }
+        ];
+
+        // Draw the lines connecting the nodes
+        connections.forEach(function (connection) {
+            var sourceNode = document.getElementById(connection.source);
+            var targetNode = document.getElementById(connection.target);
+
+            var sourceX = sourceNode.offsetLeft + sourceNode.offsetWidth / 2;
+            var sourceY = sourceNode.offsetTop + sourceNode.offsetHeight / 2;
+
+            var targetX = targetNode.offsetLeft + targetNode.offsetWidth / 2;
+            var targetY = targetNode.offsetTop + targetNode.offsetHeight / 2;
+
+            ctx.beginPath();
+            ctx.moveTo(sourceX, sourceY);
+            ctx.lineTo(targetX, targetY);
+            ctx.stroke();
+        });
+
+        // Change the color of a node on input
+        function changeNodeColor(nodeId, color) {
+            var node = document.getElementById(nodeId);
+            node.style.backgroundColor = color;
+        }
+
+        function changeEdgeColor(source,target, color) {
+            var sourceNode = document.getElementById(source);
+            var targetNode = document.getElementById(target);
+
+            var sourceX = sourceNode.offsetLeft + sourceNode.offsetWidth / 2;
+            var sourceY = sourceNode.offsetTop + sourceNode.offsetHeight / 2;
+
+            var targetX = targetNode.offsetLeft + targetNode.offsetWidth / 2;
+            var targetY = targetNode.offsetTop + targetNode.offsetHeight / 2;
+
+            ctx.beginPath();
+            ctx.moveTo(sourceX, sourceY);
+            ctx.lineTo(targetX, targetY);
+            ctx.strokeStyle=color;
+            ctx.stroke();
+        }
+        
+    const urlParams = new URLSearchParams(window.location.search);
+    const data = urlParams.get('data');
+    console.log(data);    
+   // changeNodeColor(data,'#af06f2');
+
+        changeNodeColor('node1', '#87CEEB');
+        changeNodeColor('node2', '#87CEEB');
+        changeNodeColor('node3', '#87CEEB');
+        changeNodeColor('node4', '#87CEEB');
+        changeNodeColor('node5', '#87CEEB');
+        changeNodeColor('node6', '#87CEEB');
+        changeNodeColor('smallnode1', '#87CEEB');
+        changeEdgeColor('node1','node2', '#000000');
+        changeNodeColor(data,'#ff0000');
+    </script>
+</body>
+</html>

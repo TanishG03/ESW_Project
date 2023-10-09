@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="nav.css" />
+        <link rel="stylesheet" href="slideshow.css" />
+        <link rel="stylesheet" href="hospital.css" />
+
+
+        <title>DRONOS</title>
+
+      </head>
+<body style="background-color: black;">
+    <nav style="font-family: Arial, Helvetica, sans-serif">
+      <a id="clicktohome" href="homepage.html"  style="
+      width: 20%;
+      float: left;
+      position: relative;
+      text-align: center;
+      padding-top: 1.4%;
+      font-family: Hanson-Bold;
+      font-size: 75px;"
+      
+        >DRONOS</a>
+      <ul
+        style="
+          width: 30%;
+          float: right;
+          margin-right: 50px;
+          text-align: center;
+          margin-top: 20px;
+          font-family: Arial, Helvetica, sans-serif;
+        "
+      >
+        <li><a href="iotmap.html">Analytics</a></li>
+        <li><a href="categories.html">Contact Us</a></li>
+
+      </ul>
+    </nav>
+
+    <div class="slideshow-container" style="font-family: Arial, Helvetica, sans-serif;">
+
+        <div class="mySlides fade">
+          <div id="initial_container">Think Big,<br> Fly Small.. <br> Where Intelligence <br> Meets Altitude!</div>
+          <div id="typing" style="height:100px;" ></div>
+        </div>
+       
+       
+        
+    </div>
+        <br>
+        
+
+
+
+        <div class="text_for_cat_and_canteens" >
+            TRACK
+        </div>
+
+        <div class="text_for_cat_and_canteens" style="height: 430px; color: white; background-color:#3f72af; font-size: 55px; background-image: url(../static/back.jpeg);"  >
+          
+          <div style="text-align:left; margin-left:20px; padding-top: 20px;">Saving Someone's life, Is a Big Task... 
+            <br>But, Traffic in the Way??<br> Don't Worry!!
+          </div>
+          <br>
+          
+
+         <div id="typing" ></div>
+      </div>
+
+
+
+
+          <div class="text_for_cat_and_canteens" >
+            HOSPITALS
+        </div>
+
+        <div class="text_for_cat_and_canteens" style="height: 430px; background-color:black; font-size: 55px; color:beige;"  >
+          
+          <div style="text-align:left; margin-left:20px; padding-top: 20px;">At an unknown location??
+            <br>Unbeknownst of the nearest Medical Centers<br>Don't Worry...
+          </div>
+          <br>
+          
+
+         <div id="typing2" ></div>
+      </div>
+
+        <div class="flex-container" style="margin-top: 20px; height: 700px; ">
+            <div class="flex-item">
+              <a style="text-decoration: none; color: white" href="https://www.himagirihospitals.com/" target="_self">
+                <p class="text-container1" style="font-size: 70px;">HIMAGIRI</p>
+              </a>
+            </div>
+            <div class="flex-item">
+              <a style="text-decoration: none; color: white" href="https://continentalhospitals.com/contact/" target="_self">
+                <p class="text-container1" style="font-size: 70px;">CONTINENTAL</p>
+              </a>
+            </div>
+            <div class="flex-item">
+              <a style="text-decoration: none; color: white" href="https://www.apollospectra.com/hyderabad/kondapur/our-hospitals/best-hospital-in-kondapur-hyderabad" target="_self">
+                <p class="text-container1" style="font-size: 70px;">APOLLO</p>
+              </a>
+            </div>
+
+        
+          </div>
+
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              let i;
+              let slides = document.getElementsByClassName("mySlides");
+              let dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+            
+            }
+            
+            // Change slides automatically every 3 seconds
+            setInterval(function() {
+              plusSlides(1);
+            }, 4000);
+            
+
+            const typingText = "We Have Got You Covered!!";
+            const typingDelay = 40; // in milliseconds
+            let index = 0;
+            const typingEl = document.getElementById("typing");
+            
+            function type() {
+                typingEl.textContent += typingText[index];
+            
+                if (++index < typingText.length) {
+                    setTimeout(type, typingDelay);
+                }
+            }
+            
+            setTimeout(type, typingDelay);
+            
+            function type2() {
+                const typingText2 = "Let us shoulder it for You..";
+                const typingDelay2 = 40; // in milliseconds
+                let index2 = 0;
+                const typingEl2 = document.getElementById("typing2");
+            
+                function type2Inner() {
+                    typingEl2.textContent += typingText2[index2];
+            
+                    if (++index2 < typingText2.length) {
+                        setTimeout(type2Inner, typingDelay2);
+                    }
+                }
+            
+                setTimeout(type2Inner, typingDelay);
+            }
+            
+            setTimeout(type2, typingDelay * typingText.length);
+            
+
+            </script>
+  </body>
+
+    </html>
