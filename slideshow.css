@@ -28,6 +28,7 @@ body {
     overflow: hidden;
     margin-top: 7%;
     background-image: url(aesthetic-colorful-yellow-and-green-gradient-background-illustration-perfect-for-wallpaper-background-backdrop-banner-vector.jpg);
+    background-size: cover;
 }
 
 .analytics-container {
