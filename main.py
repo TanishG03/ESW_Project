@@ -1,6 +1,7 @@
 from flask import Flask, render_template, send_from_directory, jsonify
 from random import randint
 from requests import request
+import random
 import json
 
 def getDroneSensorsData():
@@ -40,6 +41,14 @@ def getDroneSensorsData():
         print("Requested resource not found.")
     else:
         print("Error:", response.status_code)
+        
+        
+
+
+# Initialize global variable
+
+
+
 
 
 app = Flask(__name__)
@@ -64,6 +73,42 @@ def load_analytics():
 def load_data():
     rawData = getDroneSensorsData()
     return render_template('data_page.html', sensorData=rawData)
+    
+ 
+# @app.route("/display")
+#def load_display():
+  #  return render_template('display.html', sensorData = 
+global_realtime_data = None
+data = {
+        "val1": random.randint(1,90),
+        "val2": random.randint(1,90),
+        "val3": random.randint(1,90)
+    }
+global_realtime_data = data
+
+@app.route("/esp32-data", methods=['POST'])
+def handle_request():
+    global global_realtime_data  # Declare global variable
+    data = request.get_json()
+    print("Data Received:", data)
+    
+    data = {
+        "val1": random.randint(1,90),
+        "val2": random.randint(1,90),
+        "val3": random.randint(1,90)
+    }
+    global_realtime_data = data
+    print("Data Received:", data)
+    return "Data received"
+
+@app.route('/realtime')
+def render_realtime_data():
+    # Check if global_realtime_data is not None before rendering
+    if global_realtime_data is not None:
+        return render_template('realtime.html', data=global_realtime_data)
+    else:
+        return "No realtime data available."
+
 
 @app.route("/get_data")
 def get_data():
@@ -82,4 +127,4 @@ def send_report(path):
     return send_from_directory('./', path)
 
 
-app.run(debug=True, port=5000)
+app.run(host='0.0.0.0', port=5001) 

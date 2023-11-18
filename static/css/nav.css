@@ -3,6 +3,11 @@
   src: url(../assets/hanson-bold.ttf);
 }
 
+@font-face {
+  font-family: 'Circular';
+  src: url(../assets/CircularSpotifyTxT-Book.ttf);
+}
+
 nav {
     height: 10.5%;
     position: fixed;

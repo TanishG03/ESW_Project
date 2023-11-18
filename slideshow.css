@@ -21,23 +21,33 @@ body {
     background-color: #000000;
 }
 
-.slideshow-container  {
+.slideshow-container {
     height: 70vh; /* Set height to 60% of the viewport height */
     position: relative;
     margin: auto;
     overflow: hidden;
     margin-top: 7%;
-    background-image:url(../assets/aesthetic-colorful-yellow-and-green-gradient-background-illustration-perfect-for-wallpaper-background-backdrop-banner-vector.jpg);
+    background-image: url(aesthetic-colorful-yellow-and-green-gradient-background-illustration-perfect-for-wallpaper-background-backdrop-banner-vector.jpg);
     background-size: cover;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust the last value (0.5) for opacity */
 }
 
-.slideshow-container:hover{
-    background-size: 110%;
-    background-position: center;
-    opacity: 0.8;
-    transition: 0.3s;
-    
+.slideshow-container2 {
+    height: 70vh; /* Set height to 60% of the viewport height */
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 7%;
+    background-size: cover;
+}
+
+.slideshow-container_2 {
+    height: 70vh; /* Set height to 60% of the viewport height */
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 7%;
+    background-image: url(aesthetic-colorful-yellow-and-green-gradient-background-illustration-perfect-for-wallpaper-background-backdrop-banner-vector.jpg);
+    background-size: cover;
 }
 
 .analytics-container {
@@ -46,7 +56,15 @@ body {
     margin: auto;
     overflow: hidden;
     margin-top: 2%;
-    background-image: url(../assets/aesthetic-colorful-yellow-and-green-gradient-background-illustration-perfect-for-wallpaper-background-backdrop-banner-vector.jpg);
+    background-image: url(aesthetic-colorful-yellow-and-green-gradient-background-illustration-perfect-for-wallpaper-background-backdrop-banner-vector.jpg);
+}
+
+.analytics-container {
+    height: 80vh; /* Set height to 60% of the viewport height */
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 2%;
 }
 
 .mySlides {
