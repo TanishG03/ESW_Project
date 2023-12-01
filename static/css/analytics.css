@@ -1,7 +1,26 @@
-#analytics_container{
-    height: 70vh; /* Set height to 60% of the viewport height */
-    position: relative;
-    margin: auto;
-    overflow: hidden;
-    margin-top: 7%;
-  }
+#analytics_container {
+  height: 70vh; /* Set height to 60% of the viewport height */
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  margin-top: 7%;
+}
+
+.charts-container {
+  display: flex;
+  /* justify-content: space-between; */
+  height: 500px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#altitudePlot,
+#trajectoryChart {
+  border: 1px solid #ccc;
+  /* width: 50%; */
+  height: 450px;
+  box-sizing: border-box;
+  margin: 20px;
+  /* padding: 20px; */
+}

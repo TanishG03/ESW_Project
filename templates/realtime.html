@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,57 +5,57 @@
     <link rel="stylesheet" href="../static/css/slideshow.css" />
     <link rel="stylesheet" href="../static/css/hospital.css" />
     <link rel="stylesheet" href="../static/css/analytics.css" />
-<!-- Add Three.js library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Add Three.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
     <title>DRONOS</title>
     <style>
+      .container2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2.5%;
+        margin-left: 2%;
+        width: 95%;
+      }
 
-.container2 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 2.5%;
-            margin-left: 2%;
-            width: 95%;
-        }
+      .card {
+        flex: 1;
+        height: 300px;
+        background-color: #f8f8f8;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 30px;
+        text-align: center;
+        margin: 0 20px;
+        transition: box-shadow 0.3s ease;
+      }
 
-        .card {
-            flex: 1;
-            height: 300px;
-            background-color: #f8f8f8;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 30px;
-            text-align: center;
-            margin: 0 20px;
-            transition: box-shadow 0.3s ease;
-        }
+      #droneContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 500px;
+      }
 
-        #droneContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 500px;
-}
+      .container2 .card:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      }
 
-        .container2 .card:hover {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
-
-
-        .card p {
-            font-size: 24px;
-            margin: 10px 0;
-            margin-top: 10%;
-        }
-
+      .card p {
+        font-size: 24px;
+        margin: 10px 0;
+        margin-top: 10%;
+      }
     </style>
   </head>
-  <body style="background-color: black">
+  <body style="background-color: white">
     <nav style="font-family: Arial, Helvetica, sans-serif">
       <a
         id="clicktohome"
-        href="homepage"
+        href="/"
         style="
           width: 20%;
           float: left;
@@ -82,17 +80,19 @@
         <li><a href="analytics">Analytics</a></li>
         <li><a href="hardware">Hardware</a></li>
 
-        <li><a href="categories">Contact Us</a></li>
+        <li><a href="about">Contact Us</a></li>
       </ul>
     </nav>
 
     <div
       class="slideshow-container2"
-      style="font-family: Arial, Helvetica, sans-serif;  height: 30vh;
-      margin-top:10% ;
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        height: 30vh;
+        margin-top: 10%;
       "
     >
-      <div class="mySlides fade" style="height: 30vh;">
+      <div class="mySlides fade" style="height: 30vh">
         <div
           id="initial_container"
           style="
@@ -111,47 +111,69 @@
       </div>
     </div>
 
-
-    <div id="droneContainer" style="width: 100%; height: 500px;"></div>
-</div>
+    <div id="droneContainer" style="width: 100%; height: 500px"></div>
 
     <div
       class="analytics-container2"
-      style="
-        font-family: Arial, Helvetica, sans-serif;
-        z-index: 0;
-      "
+      style="font-family: Arial, Helvetica, sans-serif; z-index: 0"
     >
-
-    <div class="container2" style="font-family: Circular;">
-        <div class="card" style="background-image: url(../static/assets/aesthetic-colorful-yellow-and-green-gradient-background-illustration-perfect-for-wallpaper-background-backdrop-banner-vector.jpg); background-size: cover;">
-            <p>Value 1</p>
-            <p style="font-size: 90px;">{{ data['val1'] }}</p>
+      <div class="container2" style="font-family: Circular">
+        <div
+          class="card"
+          style="
+            background-image: url(../static/assets/aesthetic-colorful-yellow-and-green-gradient-background-illustration-perfect-for-wallpaper-background-backdrop-banner-vector.jpg);
+            background-size: cover;
+          "
+        >
+          <p>Value 1</p>
+          <p style="font-size: 90px">{{ data['val1'] }}</p>
         </div>
-        <div class="card" style="background-image: url(../static/assets/aesthetic-colorful-yellow-and-green-gradient-background-illustration-perfect-for-wallpaper-background-backdrop-banner-vector.jpg); background-size: cover;">
-            <p>Value 2</p>
-            <p style="font-size: 90px;">{{ data['val2'] }}</p>
+        <div
+          class="card"
+          style="
+            background-image: url(../static/assets/aesthetic-colorful-yellow-and-green-gradient-background-illustration-perfect-for-wallpaper-background-backdrop-banner-vector.jpg);
+            background-size: cover;
+          "
+        >
+          <p>Value 2</p>
+          <p style="font-size: 90px">{{ data['val2'] }}</p>
         </div>
-        <div class="card" style="background-image: url(../static/assets/aesthetic-colorful-yellow-and-green-gradient-background-illustration-perfect-for-wallpaper-background-backdrop-banner-vector.jpg); background-size: cover;">
-            <p>Value 3</p>
-            <p style="font-size: 90px;">{{ data['val3'] }}</p>
+        <div
+          class="card"
+          style="
+            background-image: url(../static/assets/aesthetic-colorful-yellow-and-green-gradient-background-illustration-perfect-for-wallpaper-background-backdrop-banner-vector.jpg);
+            background-size: cover;
+          "
+        >
+          <p>Value 3</p>
+          <p style="font-size: 90px">{{ data['val3'] }}</p>
         </div>
 
-        <div class="card" style="background-image: url(../static/assets/aesthetic-colorful-yellow-and-green-gradient-background-illustration-perfect-for-wallpaper-background-backdrop-banner-vector.jpg); background-size: cover;">
-            <p>Value 4</p>
-            <p style="font-size: 90px;">{{ data['val3'] }}</p>
+        <div
+          class="card"
+          style="
+            background-image: url(../static/assets/aesthetic-colorful-yellow-and-green-gradient-background-illustration-perfect-for-wallpaper-background-backdrop-banner-vector.jpg);
+            background-size: cover;
+          "
+        >
+          <p>Value 4</p>
+          <p style="font-size: 90px">{{ data['val4'] }}</p>
         </div>
+      </div>
 
-    </div>
+      <div class="charts-container">
+        <div id="altitudePlot"></div>
+        <div id="trajectoryPlot"></div>
+      </div>
 
-        <!-- {% if data %}
+      <!-- {% if data %}
             <p>Value 1: {{ data['val1'] }}</p>
             <p>Value 2: {{ data['val2'] }}</p>
             <p>Value 3: {{ data['val3'] }}</p>
         {% else %}
             <p>Failed to fetch realtime data.</p>
         {% endif %} -->
-</div>
+    </div>
 
     <div
       class="slideshow-container"
@@ -224,7 +246,7 @@
           dots[i].className = dots[i].className.replace(" active", "");
         }
         slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].className += " active";
+        // dots[slideIndex - 1].className += " active";
       }
 
       // Change slides automatically every 3 seconds
@@ -232,17 +254,18 @@
         plusSlides(1);
       }, 4000);
 
-
-    </script>
-
-<script>
-    // Function to create and update the rotating box
-    function createRotatingBox(val1, val2, val3) {
+      // Function to create and update the rotating box
+      function createRotatingBox(val1, val2, val3) {
         // Create a scene
         var scene = new THREE.Scene();
 
         // Create a camera
-        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        var camera = new THREE.PerspectiveCamera(
+          75,
+          window.innerWidth / window.innerHeight,
+          0.1,
+          1000
+        );
 
         // Adjust the camera position to center the box
         camera.position.x = 0;
@@ -250,17 +273,23 @@
         camera.position.z = 5;
 
         // Specify the desired dimensions for the canvas
-        var canvasWidth = 1080;  // Set your desired width
+        var canvasWidth = 1080; // Set your desired width
         var canvasHeight = 600; // Set your desired height
 
         // Create a WebGLRenderer with the specified dimensions
         var renderer = new THREE.WebGLRenderer();
         renderer.setSize(canvasWidth, canvasHeight);
-        document.getElementById('droneContainer').appendChild(renderer.domElement);
+        document
+          .getElementById("droneContainer")
+          .appendChild(renderer.domElement);
 
         // Create a box
         var initialBoxSize = 1; // Set the initial size of the box
-        var geometry = new THREE.BoxGeometry(initialBoxSize, initialBoxSize, initialBoxSize);
+        var geometry = new THREE.BoxGeometry(
+          initialBoxSize,
+          initialBoxSize,
+          initialBoxSize
+        );
         var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
         var box = new THREE.Mesh(geometry, material);
         scene.add(box);
@@ -286,13 +315,195 @@
 
         // Render the scene
         renderer.render(scene, camera);
-    }
+      }
 
-    // Call the function with sample values (replace with your actual values)
-    createRotatingBox(0.1, 0.2, 0.3);
-</script>
+      // Call the function with sample values (replace with your actual values)
+      createRotatingBox(0.1, 0.2, 0.3);
 
+      let currentPosition = { x: 0, y: 0, z: 0 };
+      let radialVelocity = { x: 0, y: 0, z: 0 };
+      let acceleration = { x: 0, y: 0, z: 0 };
+      let isFetching = false; // Variable to track whether a fetch operation is in progress
 
-  
+      let trajectoryData = [];
+
+      const dt = 1;
+
+      function calculateNextPosition(
+        currentPosition,
+        radialVelocity,
+        acceleration
+      ) {
+        let newVelocity = {
+          x: radialVelocity.x + acceleration.x * dt,
+          y: radialVelocity.y + acceleration.y * dt,
+          z: radialVelocity.z + acceleration.z * dt,
+        };
+
+        let newPosition = {
+          x: currentPosition.x + newVelocity.x * dt,
+          y: currentPosition.y + newVelocity.y * dt,
+          z: currentPosition.z + newVelocity.z * dt,
+        };
+
+        return newPosition;
+      }
+
+      ectoryPlot = document.getElementById("trajectoryPlot");
+      let trajectoryCanvas = document.createElement("canvas");
+      trajectoryCanvas.width = 1000;
+      trajectoryCanvas.height = 500;
+      trajectoryCanvas.id = "trajectoryChart";
+      trajectoryPlot.appendChild(trajectoryCanvas);
+      let ctx = document.getElementById("trajectoryChart").getContext("2d");
+      let lastPoints = [];
+      let chart = new Chart(ctx, {
+        type: "scatter",
+        data: {
+          datasets: [
+            {
+              label: "Trajectory Data",
+              data: [],
+              backgroundColor: "rgba(75, 192, 192, 0.2)",
+              borderColor: "rgba(75, 192, 192, 1)",
+              borderWidth: 1,
+              pointRadius: 5,
+              pointHoverRadius: 8,
+              pointBackgroundColor: "rgba(75, 192, 192, 1)",
+              showLine: true,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+        },
+      });
+
+      function animatePlot() {
+        if (!isFetching) {
+          isFetching = true;
+
+          fetch("/getGyroData")
+            .then((response) => response.json())
+            .then((data) => {
+              const newRadialVelocity = {
+                x: parseFloat(data["gx"]) || 0,
+                y: parseFloat(data["gy"]) || 0,
+                z: parseFloat(data["gz"]) || 0,
+              };
+              const newAcceleration = {
+                x: parseFloat(data["ax"]) || 0,
+                y: parseFloat(data["ay"]) || 0,
+                z: parseFloat(data["az"]) || 0,
+              };
+
+              currentPosition = calculateNextPosition(
+                currentPosition,
+                newRadialVelocity,
+                newAcceleration
+              );
+
+              const newPoint = { x: currentPosition.x, y: currentPosition.y };
+
+              const isUniquePoint = lastPoints.every(
+                (point) =>
+                  Math.abs(point.x - newPoint.x) > 0.0001 ||
+                  Math.abs(point.y - newPoint.y) > 0.0001
+              );
+
+              if (isUniquePoint) {
+                trajectoryData.push({
+                  x: currentPosition.x,
+                  y: currentPosition.y,
+                });
+                lastPoints.push(newPoint);
+                if (lastPoints.length > 3) {
+                  lastPoints.shift();
+                }
+                chart.data.datasets[0].data.push(newPoint);
+
+                // Update the chart
+                chart.update();
+              }
+              isFetching = false;
+            })
+            .catch((error) => {
+              console.error("Error fetching data:", error);
+              isFetching = false;
+            });
+        }
+      }
+
+      setInterval(animatePlot, 1000);
+
+      let sensorData = {
+        droneSensors: [
+          [37, 60, 87, 100],
+          [39, 67, 81, 40],
+          [47, 50, 97, 109],
+        ],
+      };
+
+      let sensorNames = ["Temperature", "Humidity", "AQI", "Altitude"];
+      let altitudePlot = document.getElementById("altitudePlot");
+      altitudePlot.classList.add("sensor-container");
+
+      let altitudeCanvas = document.createElement("canvas");
+      altitudeCanvas.width = 1000;
+      altitudeCanvas.height = 500;
+      altitudeCanvas.id = "altitudeChart";
+      altitudePlot.appendChild(altitudeCanvas);
+      // document.body.appendChild(altitudePlot);
+
+      let altitudeChart;
+
+      function createAltitudeChart() {
+        let values = sensorData["droneSensors"].map((entry) => entry[3]); // Altitude is at index 3
+        let altitudeCtx = document
+          .getElementById("altitudeChart")
+          .getContext("2d");
+
+        altitudeChart = new Chart(altitudeCtx, {
+          type: "line",
+          data: {
+            labels: ["1", "2", "3", "4"],
+            datasets: [
+              {
+                label: sensorNames[3], // Altitude label
+                data: values,
+                backgroundColor: "rgba(75, 192, 192, 0.2)",
+                borderColor: "rgba(75, 192, 192, 1)",
+                borderWidth: 1,
+                pointRadius: 5,
+                pointHoverRadius: 8,
+                pointBackgroundColor: "rgba(75, 192, 192, 1)",
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+          },
+        });
+      }
+
+      function updateAltitudeData() {
+        fetch("/get_data") // Assuming you have a route for fetching data
+          .then((response) => response.json())
+          .then((data) => {
+            sensorData = data["sensorData"];
+            let values = sensorData["droneSensors"].map((entry) => entry[3]); // Altitude is at index 3
+            altitudeChart.data.datasets[0].data = values;
+            altitudeChart.update();
+          });
+      }
+
+      createAltitudeChart();
+      setInterval(updateAltitudeData, 1000);
+    </script>
   </body>
 </html>
