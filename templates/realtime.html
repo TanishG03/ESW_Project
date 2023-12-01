@@ -51,7 +51,7 @@
       }
     </style>
   </head>
-  <body style="background-color: white">
+  <body style="background-color: black">
     <nav style="font-family: Arial, Helvetica, sans-serif">
       <a
         id="clicktohome"
@@ -125,8 +125,9 @@
             background-size: cover;
           "
         >
-          <p>Value 1</p>
-          <p style="font-size: 90px">{{ data['val1'] }}</p>
+        <p style="font-size: 50px; line-height: 30px">Temperature</p>
+
+          <p style="font-size: 90px">{{ data['val1'] }}°C</p>
         </div>
         <div
           class="card"
@@ -135,7 +136,7 @@
             background-size: cover;
           "
         >
-          <p>Value 2</p>
+        <p style="font-size: 50px; line-height: 40px">Humidity</p>
           <p style="font-size: 90px">{{ data['val2'] }}</p>
         </div>
         <div
@@ -145,7 +146,7 @@
             background-size: cover;
           "
         >
-          <p>Value 3</p>
+          <p style="font-size: 50px; line-height: 30px">AQI</p>
           <p style="font-size: 90px">{{ data['val3'] }}</p>
         </div>
 
@@ -156,8 +157,8 @@
             background-size: cover;
           "
         >
-          <p>Value 4</p>
-          <p style="font-size: 90px">{{ data['val4'] }}</p>
+          <p style="font-size: 50px; line-height: 30px">Altitude</p>
+          <p style="font-size: 90px">{{ data['val4']/100 }}m</p>
         </div>
       </div>
 
@@ -349,7 +350,7 @@
         return newPosition;
       }
 
-      ectoryPlot = document.getElementById("trajectoryPlot");
+      let trajectoryPlot = document.getElementById("trajectoryPlot");
       let trajectoryCanvas = document.createElement("canvas");
       trajectoryCanvas.width = 1000;
       trajectoryCanvas.height = 500;
@@ -376,6 +377,9 @@
         },
         options: {
           responsive: true,
+          plugins: {
+            backgroundColor: "rgba(72,72,72, 0.4)",
+          },
         },
       });
 
